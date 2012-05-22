@@ -1,0 +1,25 @@
+# [user] section needs to be in ~/.gitconfig.inc
+[include]
+    path = ~/.gitconfig.inc
+[core]
+	excludesfile = /Users/rtham/.gitignore_global
+[alias]
+    diff = diff --minimal --ignore-space-at-eol -b -w --ignore-blank-lines
+    co = checkout
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[color]
+	ui = true
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
