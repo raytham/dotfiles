@@ -1,0 +1,14 @@
+{
+    "name": "macosx",
+    "description": "Sets up a Mac OS X workstation",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    },
+    "run_list": [
+        "recipe[bash]",
+        "recipe[git]"
+    ]
+}
