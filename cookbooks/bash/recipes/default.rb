@@ -8,6 +8,7 @@
 #
 
 package "bash"
+package "bash-completion"
 
 cookbook_file File.join(Dir.home, '.bashrc') do
     source 'bashrc'

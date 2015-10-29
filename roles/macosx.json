@@ -9,6 +9,7 @@
     },
     "run_list": [
         "recipe[bash]",
-        "recipe[git]"
+        "recipe[git]",
+        "recipe[vim]"
     ]
 }
