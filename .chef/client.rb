@@ -1,5 +1,4 @@
 repo_path = File.expand_path(File.join(File.dirname(__FILE__), '..'))
-print(repo_path)
 
 cookbook_path File.join(repo_path, 'cookbooks')
 data_bag_path File.join(repo_path, 'data_bags')

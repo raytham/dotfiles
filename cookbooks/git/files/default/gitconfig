@@ -1,8 +1,8 @@
 # [user] section needs to be in ~/.gitconfig.inc
 [include]
-    path = ~/.gitconfig.inc
+    path = ~/.gitconfig.user
 [core]
-	excludesfile = /Users/rtham/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
     diff = diff --minimal --ignore-space-at-eol -b -w --ignore-blank-lines
     co = checkout
@@ -14,7 +14,7 @@
 	default = simple
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
