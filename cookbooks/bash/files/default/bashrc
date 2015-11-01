@@ -1,3 +1,7 @@
+if [ -f ~/.bashrc.inc ]; then
+    source ~/.bashrc.inc
+fi
+
 export CLICOLOR=1
 export EDITOR="vim"
 
