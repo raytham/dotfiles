@@ -1,4 +1,5 @@
-if [ -f ~/.bashrc.inc ]; then
+# Put custom/secret stuff in ~/.bashrc.inc
+if [[ -f ~/.bashrc.inc ]]; then
     source ~/.bashrc.inc
 fi
 
@@ -11,6 +12,9 @@ if [ -f /usr/local/bin/etc/bash_completion ]; then
 fi
 
 alias vi=vim
+
+# Requires brew install homebrew/dupes/grep (GNU grep)
+alias grep='ggrep'
 
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
     source /usr/local/etc/bash_completion.d/git-prompt.sh
@@ -38,4 +42,4 @@ set_prompt () {
     PS1+='\n\\$ '
 }
 
-PROMPT_COMMAND='set_prompt'
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} set_prompt"
